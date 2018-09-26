@@ -25,8 +25,24 @@ using namespace DonjonEtDragons;
 int main() {
 
 	Joueur* joueur;
-	joueur = new Guerrier("Worriar", 50);
+	joueur = new Guerrier("Guerrier", 50, 100);
 	cout << joueur->exporter() << endl;
+
+	joueur = new Archer("Archer", 50, 100);
+	cout << joueur->exporter() << endl;
+
+	joueur = new Voleur("Voleur", 50, 100);
+	cout << joueur->exporter() << endl;
+
+	Equipement* equipement;
+	equipement = new Pieds("Pieds", "Rare", 100, 50);
+	cout << equipement->exporter() << endl;
+
+	equipement = new Arme("Épée", "Rare", 100, 50);
+	cout << equipement->exporter() << endl;
+
+	equipement = new Pieds("Bouclier", "Rare", 100, 50);
+	cout << equipement->exporter() << endl;
 
 	return 0;
 }
