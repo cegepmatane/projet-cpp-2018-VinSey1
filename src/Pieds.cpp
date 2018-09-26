@@ -6,6 +6,7 @@
  */
 
 #include "Pieds.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -46,7 +47,9 @@ Pieds::Pieds(string nom, string rarete, int prix, int bonusFuite) : Equipement(n
 Pieds::~Pieds() {}
 
 string Pieds::exporter() {
-	return "<Pieds><nom></nom><rarete></rarete><prix></prix><bonusFuite></bonusFuite></Pieds>";
+	stringstream xml;
+	xml << "<Pieds><nom>" << this->nom << "</nom><rarete>"<< this->rarete << "</rarete><prix>" << this->prix << "</prix><bonusFuite>" << this->bonusFuite << "</bonusFuite></Pieds>";
+	return xml.str();
 }
 
 } /* namespace DonjonEtDragons */
