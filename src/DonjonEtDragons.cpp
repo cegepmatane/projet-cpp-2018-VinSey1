@@ -1,15 +1,18 @@
 //============================================================================
-// Name        : projet-cpp-2018-VinSey1.cpp
-// Author      : Vincent
+// Name        : DonjonEtDragons.cpp
+// Author      : 
 // Version     :
-// Copyright   : @vseyller
+// Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
 #include <iostream>
+#include "Joueur.h"
+
 using namespace std;
+using namespace DonjonEtDragons;
 
 int main() {
-	cout << "test" << endl; // prints test
+	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	return 0;
 }
