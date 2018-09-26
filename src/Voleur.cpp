@@ -6,6 +6,7 @@
  */
 
 #include "Voleur.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -32,7 +33,8 @@ Voleur::Voleur(string nom, int armure, int finesse) : Joueur(nom, armure) {
 Voleur::~Voleur() {}
 
 string Voleur::exporter() {
-	return "<Voleur><nom></nom><armure></armure><finesse></finesse></Voleur>";
-}
+	stringstream xml;
+	xml << "<Voleur><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><finesse>" << this->finesse << "</finesse></Voleur>";
+	return xml.str();}}
 
 } /* namespace DonjonEtDragons */
