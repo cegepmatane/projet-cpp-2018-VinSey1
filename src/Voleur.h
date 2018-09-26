@@ -12,7 +12,7 @@
 
 namespace DonjonEtDragons {
 
-class Voleur: public Joueur{
+class Voleur: public Joueur {
 public:
 	Voleur();
 	Voleur(string nom);
@@ -33,8 +33,6 @@ public:
 
 protected:
 	int finesse;
-};
-
 };
 
 } /* namespace DonjonEtDragons */

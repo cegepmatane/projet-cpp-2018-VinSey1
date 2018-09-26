@@ -9,13 +9,30 @@
 
 namespace DonjonEtDragons {
 
-Archer::Archer() {
-	// TODO Auto-generated constructor stub
-
+Archer::Archer() : Joueur() {
+	this->agilite = 0;
 }
 
-Archer::~Archer() {
-	// TODO Auto-generated destructor stub
+Archer::Archer(string nom) : Joueur(nom) {
+	this->nom = nom;
+	this->agilite = 0;
+}
+
+Archer::Archer(string nom, int agilite) : Joueur(nom) {
+	this->nom = nom;
+	this->agilite = agilite;
+}
+
+Archer::Archer(string nom, int armure, int agilite) : Joueur(nom, armure) {
+	this->nom = nom;
+	this->armure = armure;
+	this->agilite = agilite;
+}
+
+Archer::~Archer() {}
+
+string Archer::exporter() {
+	return "<Archer><nom></nom><armure></armure><agilite></agilite></Archer>";
 }
 
 } /* namespace DonjonEtDragons */
