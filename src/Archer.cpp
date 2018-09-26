@@ -6,6 +6,7 @@
  */
 
 #include "Archer.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -32,7 +33,9 @@ Archer::Archer(string nom, int armure, int agilite) : Joueur(nom, armure) {
 Archer::~Archer() {}
 
 string Archer::exporter() {
-	return "<Archer><nom></nom><armure></armure><agilite></agilite></Archer>";
+	stringstream xml;
+	xml << "<Archer><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><agilite>" << this->agilite << "</agilite></Archer>";
+	return xml.str();}
 }
 
 } /* namespace DonjonEtDragons */
