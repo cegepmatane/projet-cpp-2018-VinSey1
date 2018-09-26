@@ -6,6 +6,7 @@
  */
 
 #include "Equipement.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -36,7 +37,9 @@ Equipement::Equipement(string nom, string rarete, int prix){
 Equipement::~Equipement() {}
 
 string Equipement::exporter() {
-	return "<Equipement><nom></nom><rarete></rarete><prix></prix></Equipement>";
+	stringstream xml;
+	xml << "<Equipement><nom>" << this->nom << "</nom><rarete>"<< this->rarete << "</rarete><prix>" << this->prix << "</prix></Equipement>";
+	return xml.str();
 }
 
 } /* namespace DonjonEtDragons */

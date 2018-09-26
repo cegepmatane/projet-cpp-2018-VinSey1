@@ -49,6 +49,7 @@ Bouclier::~Bouclier() {}
 string Bouclier::exporter() {
 	stringstream xml;
 	xml << "<Bouclier><nom>" << this->nom << "</nom><rarete>"<< this->rarete << "</rarete><prix>" << this->prix << "</prix><blocage>" << this->blocage << "</blocage></Bouclier>";
-	return xml.str();}
+	return xml.str();
+}
 
 } /* namespace DonjonEtDragons */
