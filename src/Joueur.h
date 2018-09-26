@@ -26,7 +26,7 @@ public:
 		return armure;
 	}
 
-	void setArmure(int armure) const {
+	void setArmure(int armure) {
 		this->armure = armure;
 	}
 
