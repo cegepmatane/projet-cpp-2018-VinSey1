@@ -10,7 +10,7 @@
 #include <iostream>
 using namespace std;
 
-namespace DonjonEtDragons{
+namespace DonjonEtDragons {
 
 class Joueur {
 public:
