@@ -6,6 +6,7 @@
  */
 
 #include "Guerrier.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -32,7 +33,8 @@ Guerrier::Guerrier(string nom, int armure, int fureur) : Joueur(nom, armure) {
 Guerrier::~Guerrier() {}
 
 string Guerrier::exporter() {
-	return "<Guerrier><nom></nom><armure></armure><fureur></fureur></Guerrier>";
-}
+	stringstream xml;
+	xml << "<Guerrier><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><fureur>" << this->fureur << "</fureur></Guerrier>";
+	return xml.str();}
 
 } /* namespace DonjonEtDragons */
