@@ -6,6 +6,7 @@
  */
 
 #include "Bouclier.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -46,7 +47,8 @@ Bouclier::Bouclier(string nom, string rarete, int prix, int blocage) : Equipemen
 Bouclier::~Bouclier() {}
 
 string Bouclier::exporter() {
-	return "<Bouclier><nom></nom><rarete></rarete><prix></prix><blocage></blocage></Bouclier>";
-}
+	stringstream xml;
+	xml << "<Bouclier><nom>" << this->nom << "</nom><rarete>"<< this->rarete << "</rarete><prix>" << this->prix << "</prix><blocage>" << this->blocage << "</blocage></Bouclier>";
+	return xml.str();}
 
 } /* namespace DonjonEtDragons */
