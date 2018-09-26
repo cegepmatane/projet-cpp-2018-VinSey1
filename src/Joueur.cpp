@@ -6,6 +6,7 @@
  */
 
 #include "Joueur.h"
+#include <sstream>
 
 namespace DonjonEtDragons {
 
@@ -27,6 +28,9 @@ Joueur::Joueur(string nom, int armure) {
 Joueur::~Joueur() {}
 
 string Joueur::exporter() {
-	return "<Joueur><nom></nom><armure></armure></Joueur>";
+	stringstream xml;
+	xml << "<Joueur><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure></Joueur>";
+	return xml.str();
 }
+
 } /* namespace DonjonEtDragons */

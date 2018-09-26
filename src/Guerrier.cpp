@@ -35,6 +35,7 @@ Guerrier::~Guerrier() {}
 string Guerrier::exporter() {
 	stringstream xml;
 	xml << "<Guerrier><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><fureur>" << this->fureur << "</fureur></Guerrier>";
-	return xml.str();}
+	return xml.str();
+}
 
 } /* namespace DonjonEtDragons */

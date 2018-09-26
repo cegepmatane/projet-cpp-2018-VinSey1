@@ -35,7 +35,7 @@ Archer::~Archer() {}
 string Archer::exporter() {
 	stringstream xml;
 	xml << "<Archer><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><agilite>" << this->agilite << "</agilite></Archer>";
-	return xml.str();}
+	return xml.str();
 }
 
 } /* namespace DonjonEtDragons */

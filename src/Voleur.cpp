@@ -35,6 +35,7 @@ Voleur::~Voleur() {}
 string Voleur::exporter() {
 	stringstream xml;
 	xml << "<Voleur><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><finesse>" << this->finesse << "</finesse></Voleur>";
-	return xml.str();}}
+	return xml.str();
+}
 
 } /* namespace DonjonEtDragons */
