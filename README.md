@@ -1,2 +1,13 @@
 # projet-cpp-2018-VinSey1
-projet-cpp-2018-VinSey1 created by GitHub Classroom
+
+Explications :
+Principe d'un jeu de rôle, avec un joueur qui peut jouer plusieurs classes et qui peut avoir de l'équipement.
+Classes :
+- Joueur : nom, points d'armure
+  - Guerrier : fureur
+  - Voleur : finesse
+  - Archer : agilité
+- Équipement : nom, rareté, prix
+  - Bouclier : points de blocage
+  - Arme : puissance
+  - Pieds : bonus de fuite
