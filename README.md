@@ -3,6 +3,7 @@
 Explications :
 Principe d'un jeu de rôle, avec un joueur qui peut jouer plusieurs classes et qui peut avoir de l'équipement.
 Classes :
+- DonjonEtDragons : main
 - Joueur : nom, points d'armure
   - Guerrier : fureur
   - Voleur : finesse
