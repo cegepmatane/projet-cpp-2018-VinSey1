@@ -41,7 +41,7 @@ int main() {
 	equipement = new Arme("Épée", "Rare", 100, 50);
 	cout << equipement->exporter() << endl;
 
-	equipement = new Pieds("Bouclier", "Rare", 100, 50);
+	equipement = new Bouclier("Bouclier", "Rare", 100, 50);
 	cout << equipement->exporter() << endl;
 
 	return 0;
