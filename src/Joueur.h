@@ -8,6 +8,8 @@
 #ifndef JOUEUR_H_
 #define JOUEUR_H_
 #include <iostream>
+#include "Equipement.h"
+#include <vector>
 using namespace std;
 
 namespace DonjonEtDragons {
@@ -38,9 +40,21 @@ public:
 		this->nom = nom;
 	}
 
+	const Equipement* getArme() const{
+		return arme;
+	}
+
+	void setArme(Equipement* arme){
+		this->arme = arme;
+	}
+
+	void ajouterEquipement(Equipement * nouvelEquipement);
+
 protected:
 	string nom;
 	int armure;
+	Equipement * arme;
+	vector<Equipement *> equipements;
 };
 
 } /* namespace DonjonEtDragons */

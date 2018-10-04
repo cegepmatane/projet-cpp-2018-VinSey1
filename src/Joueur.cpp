@@ -33,4 +33,8 @@ string Joueur::exporter() {
 	return xml.str();
 }
 
+void Joueur::ajouterEquipement(Equipement* nouvelEquipement){
+	this->equipements.push_back(nouvelEquipement);
+}
+
 } /* namespace DonjonEtDragons */
