@@ -13,26 +13,26 @@ namespace DonjonEtDragons {
 
 Guerrier::Guerrier() : Joueur() {
 	this->fureur = 0;
-	this->arme = new Arme("Épée", 100);
+	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom) : Joueur(nom) {
 	this->nom = nom;
 	this->fureur = 0;
-	this->arme = new Arme("Épée", 100);
+	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int fureur) : Joueur(nom) {
 	this->nom = nom;
 	this->fureur = fureur;
-	this->arme = new Arme("Épée", 100);
+	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int armure, int fureur) : Joueur(nom, armure) {
 	this->nom = nom;
 	this->armure = armure;
 	this->fureur = fureur;
-	this->arme = new Arme("Épée", 100);
+	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::~Guerrier() {
