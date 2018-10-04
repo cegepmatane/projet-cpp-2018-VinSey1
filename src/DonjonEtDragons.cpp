@@ -48,5 +48,26 @@ int main() {
 	equipement = new Bouclier("Bouclier", "Rare", 100, 50);
 	fichierDonjon << "<donjon>" << equipement->exporter() << "</donjon>";
 
+	ifstream fichierJoueurs;
+	fichierJoueurs.open("data/Joueurs.csv");
+
+	string ligne;
+	unsigned int dernierePosition = 0;
+	unsigned int positionPointVirgule = 0;
+	while(!fichierJoueurs.eof()){
+		getline(fichierJoueurs, ligne);
+		cout << "Ligne : " << ligne << endl;
+
+		dernierePosition = 0;
+		do {
+			positionPointVirgule = ligne.find(";", dernierePosition);
+			string valeur = ligne.substr(dernierePosition, positionPointVirgule - dernierePosition);
+			cout << " valeur : " << valeur;
+			dernierePosition = positionPointVirgule+1;
+		}
+		while(0 != dernierePosition);
+		cout << endl;
+	}
+
 	return 0;
 }
