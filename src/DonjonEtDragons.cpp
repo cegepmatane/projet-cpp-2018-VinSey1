@@ -6,6 +6,7 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+#include <fstream>
 #include <iostream>
 
 #include "Joueur.h"
@@ -24,25 +25,28 @@ using namespace DonjonEtDragons;
 
 int main() {
 
+	ofstream fichierDonjon;
+	fichierDonjon.open("data/donjon.xml");
+
 	Joueur* joueur;
 	joueur = new Guerrier("Guerrier", 50, 100);
-	cout << joueur->exporter() << endl;
+	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
 
 	joueur = new Archer("Archer", 50, 100);
-	cout << joueur->exporter() << endl;
+	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
 
 	joueur = new Voleur("Voleur", 50, 100);
-	cout << joueur->exporter() << endl;
+	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
 
 	Equipement* equipement;
 	equipement = new Pieds("Pieds", "Rare", 100, 50);
-	cout << equipement->exporter() << endl;
+	fichierDonjon << "<donjon>" << equipement->exporter() << "</donjon>";
 
-	equipement = new Arme("Épée", "Rare", 100, 50);
-	cout << equipement->exporter() << endl;
+	equipement = new Arme("Epee", "Rare", 100, 50);
+	fichierDonjon << "<donjon>" << equipement->exporter() << "</donjon>";
 
 	equipement = new Bouclier("Bouclier", "Rare", 100, 50);
-	cout << equipement->exporter() << endl;
+	fichierDonjon << "<donjon>" << equipement->exporter() << "</donjon>";
 
 	return 0;
 }
