@@ -19,6 +19,8 @@ public:
 	Joueur();
 	Joueur(string nom);
 	Joueur(string nom, int armure);
+	bool operator>(Joueur& autreJoueur);
+	bool operator<(Joueur& autreJoueur);
 
 	virtual ~Joueur();
 

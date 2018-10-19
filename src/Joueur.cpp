@@ -37,4 +37,14 @@ void Joueur::ajouterEquipement(Equipement* nouvelEquipement){
 	this->equipements.push_back(nouvelEquipement);
 }
 
+bool Joueur::operator>(Joueur& autreJoueur){
+	if(this->armure < autreJoueur.armure) return false;
+	return true;
+}
+
+bool Joueur::operator<(Joueur& autreJoueur){
+	if(this->armure < autreJoueur.armure) return true;
+	return false;
+}
+
 } /* namespace DonjonEtDragons */

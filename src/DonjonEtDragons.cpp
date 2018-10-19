@@ -70,6 +70,18 @@ int main() {
 	}
 	*/
 
+	//Test de l'opérateur
+
+	Joueur joueurA("joueurA", 100), joueurB("joueurB", 110);
+
+	bool estAInferieur = joueurA.getArmure() < joueurB.getArmure();
+
+	cout << "Le joueur A est " << ((estAInferieur)?"inférieur":"supérieur") << " au Joueur B" << endl;
+
+	bool estBSuperieur = joueurB.getArmure() > joueurA.getArmure();
+
+	cout << "Le joueur B est " << ((estBSuperieur)?"supérieur":"inférieur") << " au Joueur A" << endl;
+/*
 	Joueur* listeJoueurs[5];
 	listeJoueurs[0] = new Guerrier("Eliott", 110);
 	listeJoueurs[1] = new Guerrier("Vincent", 110);
@@ -89,6 +101,6 @@ int main() {
 		cout <<"</monde>";
 		cout << endl;
 	}
-
+*/
 	return 0;
 }
