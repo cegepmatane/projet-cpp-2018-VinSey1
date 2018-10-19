@@ -42,4 +42,14 @@ string Equipement::exporter() {
 	return xml.str();
 }
 
+bool Equipement::operator>(Equipement& autreEquipement){
+	if(this->prix < autreEquipement.prix) return false;
+	return true;
+}
+
+bool Equipement::operator<(Equipement& autreEquipement){
+	if(this->prix < autreEquipement.prix) return true;
+	return false;
+}
+
 } /* namespace DonjonEtDragons */

@@ -70,17 +70,29 @@ int main() {
 	}
 	*/
 
-	//Test de l'opérateur
+	//Test de l'opérateur Joueur
 
 	Joueur joueurA("joueurA", 100), joueurB("joueurB", 110);
 
-	bool estAInferieur = joueurA.getArmure() < joueurB.getArmure();
+	bool estJoueurAInferieur = joueurA.getArmure() < joueurB.getArmure();
 
-	cout << "Le joueur A est " << ((estAInferieur)?"inférieur":"supérieur") << " au Joueur B" << endl;
+	cout << "Le joueur A est " << ((estJoueurAInferieur)?"inférieur":"supérieur") << " au Joueur B" << endl;
 
-	bool estBSuperieur = joueurB.getArmure() > joueurA.getArmure();
+	bool estJoueurBInferieur = joueurB.getArmure() > joueurA.getArmure();
 
-	cout << "Le joueur B est " << ((estBSuperieur)?"supérieur":"inférieur") << " au Joueur A" << endl;
+	cout << "Le joueur B est " << ((estJoueurBInferieur)?"supérieur":"inférieur") << " au Joueur A" << endl;
+
+	//Test de l'opérateur Équipement
+
+	Equipement equipementA("equipementA", "Commun", 100), equipementB("equipementB", "Commun", 110);
+
+	bool estEquipementAMoinsCher = equipementA.getPrix() < equipementB.getPrix();
+
+	cout << "L'équipement A est " << ((estEquipementAMoinsCher)?"moins cher":"plus cher") << " que l'équipement B" << endl;
+
+	bool estEquipementBPlusCher = equipementB.getPrix() > equipementA.getPrix();
+
+	cout << "L'équipement B est " << ((estEquipementBPlusCher)?"plus cher":"moins cher") << " que l'équipement A" << endl;
 /*
 	Joueur* listeJoueurs[5];
 	listeJoueurs[0] = new Guerrier("Eliott", 110);

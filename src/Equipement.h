@@ -18,6 +18,8 @@ public:
 	Equipement(string nom);
 	Equipement(string nom, string rarete);
 	Equipement(string nom, string rarete, int prix);
+	bool operator>(Equipement& autreEquipement);
+	bool operator<(Equipement& autreEquipement);
 
 	virtual ~Equipement();
 
