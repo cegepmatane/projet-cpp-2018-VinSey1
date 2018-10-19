@@ -24,7 +24,7 @@ using namespace std;
 using namespace DonjonEtDragons;
 
 int main() {
-
+	/*
 	ofstream fichierDonjon;
 	fichierDonjon.open("data/donjon.xml");
 
@@ -66,6 +66,27 @@ int main() {
 			dernierePosition = positionPointVirgule+1;
 		}
 		while(0 != dernierePosition);
+		cout << endl;
+	}
+	*/
+
+	Joueur* listeJoueurs[5];
+	listeJoueurs[0] = new Guerrier("Eliott", 110);
+	listeJoueurs[1] = new Guerrier("Vincent", 110);
+	listeJoueurs[2] = new Guerrier("Youssef", 0);
+	listeJoueurs[3] = new Guerrier("Valentin", 110);
+	listeJoueurs[4] = new Guerrier("Valère", 110);
+
+	Joueur* joueur;
+	char lettre;
+
+	while(true){
+		cout << "<monde>" << endl;
+		for(int position = 0; position < 5; position++){
+			joueur = listeJoueurs[position];
+			cout << joueur->exporter() << endl;
+		}
+		cout <<"</monde>";
 		cout << endl;
 	}
 
