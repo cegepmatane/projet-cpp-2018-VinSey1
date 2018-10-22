@@ -24,10 +24,11 @@ using namespace std;
 using namespace DonjonEtDragons;
 
 int main() {
-	/*
+
 	ofstream fichierDonjon;
 	fichierDonjon.open("data/donjon.xml");
 
+	/*
 	Joueur* joueur;
 	joueur = new Guerrier("Guerrier", 50, 100);
 	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
@@ -68,7 +69,6 @@ int main() {
 		while(0 != dernierePosition);
 		cout << endl;
 	}
-	*/
 
 	//Test de l'opérateur Joueur
 
@@ -93,18 +93,22 @@ int main() {
 	bool estEquipementBPlusCher = equipementB.getPrix() > equipementA.getPrix();
 
 	cout << "L'équipement B est " << ((estEquipementBPlusCher)?"plus cher":"moins cher") << " que l'équipement A" << endl;
-/*
+	*/
+
 	Joueur* listeJoueurs[5];
 	listeJoueurs[0] = new Guerrier("Eliott", 110);
 	listeJoueurs[1] = new Guerrier("Vincent", 110);
 	listeJoueurs[2] = new Guerrier("Youssef", 0);
 	listeJoueurs[3] = new Guerrier("Valentin", 110);
-	listeJoueurs[4] = new Guerrier("Valère", 110);
+	listeJoueurs[4] = new Guerrier("Michael", 110);
 
 	Joueur* joueur;
+
 	char lettre;
 
-	while(true){
+	bool jeu = true;
+
+	while(jeu){
 		cout << "<monde>" << endl;
 		for(int position = 0; position < 5; position++){
 			joueur = listeJoueurs[position];
@@ -112,7 +116,51 @@ int main() {
 		}
 		cout <<"</monde>";
 		cout << endl;
+		if (cin.rdbuf() && cin.rdbuf()->in_avail() >= 0)
+		{
+			lettre = cin.get();
+			cin.ignore();
+			cout << "Vous pressez la touche " << lettre << endl;
+			switch(lettre){
+				case 'q':
+					jeu = false;
+					cout << "Vous quittez le jeu, sauvegarde en cours" << endl;
+					fichierDonjon << "<donjon>";
+					for(Joueur* joueur : listeJoueurs){
+						fichierDonjon << joueur->exporter();
+					}
+					fichierDonjon << "</donjon>";
+					break;
+				case 'a':
+					cout << "Quel personnage voulez-vous modifier ? ";
+					int numero;
+					cin >> numero;
+					cout << "Vous allez modifier le personnage " << numero << " : " << listeJoueurs[numero]->getNom() << endl;
+					cout << "Que voulez-vous modifier ? ";
+					string modification;
+
+					cin >> modification;
+					if(modification == "nom"){
+						cout << "Nouveau nom : ";
+						string nom;
+						cin >> nom;
+						cout << listeJoueurs[numero]->getNom() << " s'appelle maintenant " << nom;
+						listeJoueurs[numero]->setNom(nom);
+					} else if (modification == "armure"){
+						cout << "Nouvelle valeur d'armure : ";
+						int valeur;
+						cin >> valeur;
+						cout << listeJoueurs[numero]->getNom() << " est passé de  " << listeJoueurs[numero]->getArmure()
+								<< " à " << valeur << " d'armure";
+						listeJoueurs[numero]->setArmure(valeur);
+					} else {
+						cout << "Erreur";
+					}
+					cout << endl;
+			}
+		}
 	}
-*/
+	cout << "Fin du jeu" << endl;
+
 	return 0;
 }
