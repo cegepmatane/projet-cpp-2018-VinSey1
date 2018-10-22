@@ -96,11 +96,11 @@ int main() {
 	*/
 
 	Joueur* listeJoueurs[5];
-	listeJoueurs[0] = new Guerrier("Eliott", 110);
-	listeJoueurs[1] = new Guerrier("Vincent", 110);
-	listeJoueurs[2] = new Guerrier("Youssef", 0);
-	listeJoueurs[3] = new Guerrier("Valentin", 110);
-	listeJoueurs[4] = new Guerrier("Michael", 110);
+	listeJoueurs[0] = new Guerrier("Eliott", 60, 100);
+	listeJoueurs[1] = new Guerrier("Vincent", 70, 90);
+	listeJoueurs[2] = new Guerrier("Youssef", 80, 80);
+	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
+	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
 
 	Joueur* joueur;
 
@@ -122,7 +122,7 @@ int main() {
 			cin.ignore();
 			cout << "Vous pressez la touche " << lettre << endl;
 			switch(lettre){
-				case 'q':
+				case 'q': {
 					jeu = false;
 					cout << "Vous quittez le jeu, sauvegarde en cours" << endl;
 					fichierDonjon << "<donjon>";
@@ -131,7 +131,8 @@ int main() {
 					}
 					fichierDonjon << "</donjon>";
 					break;
-				case 'a':
+				}
+				case 'a': {
 					cout << "Quel personnage voulez-vous modifier ? ";
 					int numero;
 					cin >> numero;
@@ -157,6 +158,23 @@ int main() {
 						cout << "Erreur";
 					}
 					cout << endl;
+					break;
+				}
+				case 'e': {
+					cout << "Quels personnages voulez-vous comparer ?" << endl << "Personnage 1 : ";
+					int numeroPersonnage1;
+					cin >> numeroPersonnage1;
+					cout << listeJoueurs[numeroPersonnage1]->getNom() << endl << "Personnage 2 : ";
+					int numeroPersonnage2;
+					cin >> numeroPersonnage2;
+					cout << listeJoueurs[numeroPersonnage2]->getNom() << endl;
+					bool estPersonnage1PlusFort = listeJoueurs[numeroPersonnage1]->getArmure() > listeJoueurs[numeroPersonnage2]->getArmure();
+					cout << listeJoueurs[numeroPersonnage1]->getNom() << " a " <<
+							((estPersonnage1PlusFort)?"plus":"moins") << " d'armure que " << listeJoueurs[numeroPersonnage2]->getNom() << endl
+							<< "(" << listeJoueurs[numeroPersonnage1]->getArmure() << " contre " <<
+							listeJoueurs[numeroPersonnage2]->getArmure() << ")" << endl;
+					break;
+				}
 			}
 		}
 	}
