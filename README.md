@@ -19,3 +19,9 @@ Actions utilisateur : Lors de la boucle infinie, le joueur peut appuyer sur deux
  On peut ensuite entrer deux mots-clés pour pouvoir modifier ce personnage :
     - nom : Permet de modifier le nom du Joueur,
     - armure : Permet de modifier l'armure du Joueur.
+  - e : Permet de compareur l'armure de deux personnages, en choisissant leur emplacement dans la liste.
+  
+Mes 3 événements sont donc :
+- Modification du nom d'un joueur,
+- Modification de l'armure d'un joueur,
+- Comparaison de deux joueurs choisis.
