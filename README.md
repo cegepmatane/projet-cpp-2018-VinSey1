@@ -12,3 +12,10 @@ Classes :
   - Bouclier : points de blocage
   - Arme : puissance
   - Pieds : bonus de fuite
+  
+Actions utilisateur : Lors de la boucle infinie, le joueur peut appuyer sur deux touches différentes :
+ - q : Permet de stopper la boucle, et sauvegarde les différents Joueurs dans le fichier /data/donjon.xml,
+ - a : Permet de modifier un personnage qu'on choisit en entrant son emplacement dans la liste de personnages (entre 0 et 4).
+ On peut ensuite entrer deux mots-clés pour pouvoir modifier ce personnage :
+    - nom : Permet de modifier le nom du Joueur,
+    - armure : Permet de modifier l'armure du Joueur.
