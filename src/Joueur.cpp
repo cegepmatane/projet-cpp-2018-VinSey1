@@ -47,4 +47,15 @@ bool Joueur::operator<(Joueur& autreJoueur){
 	return false;
 }
 
+void Joueur::afficher(RenderWindow* fenetre){
+
+	sf::Texture texture;
+	texture.loadFromFile("data/joueur.png");
+	sf::Sprite image(texture);
+
+	image.setScale(sf::Vector2f(0.5f, 0.5f));
+
+	fenetre->draw(image);
+}
+
 } /* namespace DonjonEtDragons */

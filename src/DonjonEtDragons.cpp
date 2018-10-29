@@ -19,11 +19,20 @@
 #include "Bouclier.h"
 #include "Pieds.h"
 
+#include <SFML/Graphics.hpp>
 
 using namespace std;
+using namespace sf;
 using namespace DonjonEtDragons;
 
+#define LARGEUR 800
+#define HAUTEUR 600
+
 int main() {
+
+	RenderWindow fenetre(VideoMode(LARGEUR, HAUTEUR), "SFML !");
+
+    Event evenement;
 
 	ofstream fichierDonjon;
 	fichierDonjon.open("data/donjon.xml");
@@ -93,7 +102,6 @@ int main() {
 	bool estEquipementBPlusCher = equipementB.getPrix() > equipementA.getPrix();
 
 	cout << "L'équipement B est " << ((estEquipementBPlusCher)?"plus cher":"moins cher") << " que l'équipement A" << endl;
-	*/
 
 	Joueur* listeJoueurs[5];
 	listeJoueurs[0] = new Guerrier("Eliott", 60, 100);
@@ -101,6 +109,7 @@ int main() {
 	listeJoueurs[2] = new Guerrier("Youssef", 80, 80);
 	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
 	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
+
 
 	Joueur* joueur;
 
@@ -177,7 +186,51 @@ int main() {
 				}
 			}
 		}
+	}*/
+
+	Joueur* listeJoueurs[5];
+	listeJoueurs[0] = new Guerrier("Eliott", 60, 100);
+	listeJoueurs[1] = new Guerrier("Vincent", 70, 90);
+	listeJoueurs[2] = new Guerrier("Youssef", 80, 80);
+	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
+	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
+
+	Joueur* joueur = listeJoueurs[0];
+
+	bool joueurActif = false;
+
+	while (fenetre.isOpen()) {
+		fenetre.clear();
+
+		while (fenetre.pollEvent(evenement)) {
+			if (evenement.type == Event::Closed)
+				fenetre.close();
+			if(evenement.type == Event::KeyPressed) {
+				switch(evenement.key.code) {
+					case Keyboard::B: {
+						if(!(joueurActif)) joueurActif = true;
+						break;
+					}
+					case Keyboard::Q: {
+						fenetre.close();
+						cout << "Vous quittez le jeu, sauvegarde en cours" << endl;
+						fichierDonjon << "<donjon>";
+						for(Joueur* joueur : listeJoueurs){
+							fichierDonjon << joueur->exporter();
+						}
+						fichierDonjon << "</donjon>";
+						break;
+					}
+					default: {}
+				}
+			}
+		}
+
+		if(joueurActif) joueur->afficher(&fenetre);
+		fenetre.display();
+
 	}
+
 	cout << "Fin du jeu" << endl;
 
 	return 0;

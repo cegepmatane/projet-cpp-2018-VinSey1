@@ -10,6 +10,8 @@
 #include <iostream>
 #include "Equipement.h"
 #include <vector>
+#include <SFML/Graphics.hpp>
+using namespace sf;
 using namespace std;
 
 namespace DonjonEtDragons {
@@ -51,6 +53,8 @@ public:
 	}
 
 	void ajouterEquipement(Equipement * nouvelEquipement);
+
+	void afficher(RenderWindow*);
 
 protected:
 	string nom;
