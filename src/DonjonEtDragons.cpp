@@ -194,10 +194,9 @@ int main() {
 	listeJoueurs[0] = new Joueur("Eliott", 60);
 	listeJoueurs[1] = new Guerrier("Vincent", 70, 90);
 	listeJoueurs[2] = new Magicien("Youssef", 80, 80);
-	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
-	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
+	listeJoueurs[3] = new Voleur("Valentin", 90, 70);
 
-	Joueur* joueurActuel;
+	Joueur* joueurActuel = listeJoueurs[numeroJoueur];
 	bool changerJoueur;
 
 	while (fenetre.isOpen()) {
@@ -228,14 +227,15 @@ int main() {
 			}
 		}
 		if(changerJoueur){
-			if(numeroJoueur == 4) {
+			if(numeroJoueur == 3) {
 				numeroJoueur = 0;
 			} else {
 				numeroJoueur += 1;
 			}
+			joueurActuel = listeJoueurs[numeroJoueur];
+			cout << "Affichage de " << joueurActuel->getNom() << endl;
 		}
 
-		joueurActuel = listeJoueurs[numeroJoueur];
 		joueurActuel->afficher(&fenetre);
 		fenetre.display();
 	}

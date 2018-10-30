@@ -47,7 +47,6 @@ string Magicien::exporter() {
 
 void Magicien::afficher(RenderWindow* fenetre){
 
-	cout << "Affichage de " << this->nom << endl;
 	sf::Texture texture;
 	texture.loadFromFile("data/illustrations/magicien.png");
 	sf::Sprite image(texture);

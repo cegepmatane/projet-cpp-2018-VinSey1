@@ -45,4 +45,15 @@ string Voleur::exporter() {
 	return xml.str();
 }
 
+void Voleur::afficher(RenderWindow* fenetre){
+
+	sf::Texture texture;
+	texture.loadFromFile("data/illustrations/voleur.png");
+	sf::Sprite image(texture);
+
+	image.setScale(sf::Vector2f(0.5f, 0.5f));
+
+	fenetre->draw(image);
+}
+
 } /* namespace DonjonEtDragons */

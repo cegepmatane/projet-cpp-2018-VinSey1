@@ -47,7 +47,6 @@ string Guerrier::exporter() {
 
 void Guerrier::afficher(RenderWindow* fenetre){
 
-	cout << "Affichage de " << this->nom << endl;
 	sf::Texture texture;
 	texture.loadFromFile("data/illustrations/guerrier.png");
 	sf::Sprite image(texture);
