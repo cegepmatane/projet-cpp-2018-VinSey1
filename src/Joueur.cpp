@@ -13,16 +13,31 @@ namespace DonjonEtDragons {
 Joueur::Joueur() {
 	this->armure = 0;
 	this->nom = "Inconnu";
+
+	this->texture = new sf::Texture();
+	this->texture->loadFromFile("data/illustrations/joueur.png");
+	this->image = new sf::Sprite(*texture);
+	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::Joueur(string nom) {
 	this->armure = 0;
 	this->nom = nom;
+
+	this->texture = new sf::Texture();
+	this->texture->loadFromFile("data/illustrations/joueur.png");
+	this->image = new sf::Sprite(*texture);
+	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::Joueur(string nom, int armure) {
 	this->armure = armure;
 	this->nom = nom;
+
+	this->texture = new sf::Texture();
+	this->texture->loadFromFile("data/illustrations/joueur.png");
+	this->image = new sf::Sprite(*texture);
+	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::~Joueur() {}
@@ -47,15 +62,12 @@ bool Joueur::operator<(Joueur& autreJoueur){
 	return false;
 }
 
-void Joueur::afficher(RenderWindow* fenetre){
+void Joueur::afficher(RenderWindow& fenetre){
+	fenetre.draw(*image);
+}
 
-	sf::Texture texture;
-	texture.loadFromFile("data/illustrations/joueur.png");
-	sf::Sprite image(texture);
-
-	image.setScale(sf::Vector2f(0.5f, 0.5f));
-
-	fenetre->draw(image);
+void Joueur::blesser(){
+	image->setColor(sf::Color(255, 0, 0));
 }
 
 } /* namespace DonjonEtDragons */

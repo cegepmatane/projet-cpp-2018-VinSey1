@@ -54,13 +54,17 @@ public:
 
 	void ajouterEquipement(Equipement * nouvelEquipement);
 
-	virtual void afficher(RenderWindow*);
+	void afficher(RenderWindow&);
+
+	void blesser();
 
 protected:
 	string nom;
 	int armure;
-	Equipement * arme;
+	Equipement * arme = NULL;
 	vector<Equipement *> equipements;
+	sf::Texture * texture;
+	sf::Sprite * image;
 };
 
 } /* namespace DonjonEtDragons */

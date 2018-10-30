@@ -12,25 +12,25 @@
 namespace DonjonEtDragons {
 
 Guerrier::Guerrier() : Joueur() {
+	this->texture->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = 0;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom) : Joueur(nom) {
-	this->nom = nom;
+	this->texture->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = 0;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int fureur) : Joueur(nom) {
-	this->nom = nom;
+	this->texture->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = fureur;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int armure, int fureur) : Joueur(nom, armure) {
-	this->nom = nom;
-	this->armure = armure;
+	this->texture->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = fureur;
 	this->arme = new Arme("Epee", 100);
 }
@@ -43,17 +43,6 @@ string Guerrier::exporter() {
 	stringstream xml;
 	xml << "<Guerrier><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><fureur>" << this->fureur << "</fureur></Guerrier>";
 	return xml.str();
-}
-
-void Guerrier::afficher(RenderWindow* fenetre){
-
-	sf::Texture texture;
-	texture.loadFromFile("data/illustrations/guerrier.png");
-	sf::Sprite image(texture);
-
-	image.setScale(sf::Vector2f(0.5f, 0.5f));
-
-	fenetre->draw(image);
 }
 
 } /* namespace DonjonEtDragons */

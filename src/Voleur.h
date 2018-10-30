@@ -31,8 +31,6 @@ public:
 		this->finesse = fureur;
 	}
 
-	void afficher(RenderWindow*);
-
 protected:
 	int finesse;
 };

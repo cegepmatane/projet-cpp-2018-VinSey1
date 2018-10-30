@@ -12,25 +12,25 @@
 namespace DonjonEtDragons {
 
 Voleur::Voleur() : Joueur() {
+	this->texture->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = 0;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom) : Joueur(nom) {
-	this->nom = nom;
+	this->texture->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = 0;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom, int finesse) : Joueur(nom) {
-	this->nom = nom;
+	this->texture->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = finesse;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom, int armure, int finesse) : Joueur(nom, armure) {
-	this->nom = nom;
-	this->armure = armure;
+	this->texture->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = finesse;
 	this->arme = new Arme("Dague", 50);
 }
@@ -43,17 +43,6 @@ string Voleur::exporter() {
 	stringstream xml;
 	xml << "<Voleur><nom>" << this->nom << "</nom><armure>"<< this->armure << "</armure><finesse>" << this->finesse << "</finesse></Voleur>";
 	return xml.str();
-}
-
-void Voleur::afficher(RenderWindow* fenetre){
-
-	sf::Texture texture;
-	texture.loadFromFile("data/illustrations/voleur.png");
-	sf::Sprite image(texture);
-
-	image.setScale(sf::Vector2f(0.5f, 0.5f));
-
-	fenetre->draw(image);
 }
 
 } /* namespace DonjonEtDragons */

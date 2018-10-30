@@ -31,8 +31,6 @@ public:
 		this->magie = magie;
 	}
 
-	void afficher(RenderWindow*);
-
 protected:
 	int magie;
 };

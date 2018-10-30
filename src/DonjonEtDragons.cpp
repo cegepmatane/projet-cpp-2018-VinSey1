@@ -222,6 +222,10 @@ int main() {
 						fichierDonjon << "</donjon>";
 						break;
 					}
+					case Keyboard::A: {
+						joueurActuel->blesser();
+						break;
+					}
 					default: {}
 				}
 			}
@@ -236,8 +240,9 @@ int main() {
 			cout << "Affichage de " << joueurActuel->getNom() << endl;
 		}
 
-		joueurActuel->afficher(&fenetre);
+		joueurActuel->afficher(fenetre);
 		fenetre.display();
+
 	}
 
 	cout << "Fin du jeu" << endl;

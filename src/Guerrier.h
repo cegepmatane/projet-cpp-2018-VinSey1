@@ -31,8 +31,6 @@ public:
 		this->fureur = fureur;
 	}
 
-	void afficher(RenderWindow*);
-
 protected:
 	int fureur;
 };
