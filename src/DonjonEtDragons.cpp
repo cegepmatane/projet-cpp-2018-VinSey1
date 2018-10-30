@@ -10,7 +10,6 @@
 #include <iostream>
 
 #include "Joueur.h"
-#include "Archer.h"
 #include "Voleur.h"
 #include "Guerrier.h"
 
@@ -20,6 +19,7 @@
 #include "Pieds.h"
 
 #include <SFML/Graphics.hpp>
+#include "Magicien.h"
 
 using namespace std;
 using namespace sf;
@@ -42,7 +42,7 @@ int main() {
 	joueur = new Guerrier("Guerrier", 50, 100);
 	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
 
-	joueur = new Archer("Archer", 50, 100);
+	joueur = new Magicien("Magicien", 50, 100);
 	fichierDonjon << "<donjon>" << joueur->exporter() << "</donjon>";
 
 	joueur = new Voleur("Voleur", 50, 100);
