@@ -45,4 +45,16 @@ string Magicien::exporter() {
 	return xml.str();
 }
 
+void Magicien::afficher(RenderWindow* fenetre){
+
+	cout << "Affichage de " << this->nom << endl;
+	sf::Texture texture;
+	texture.loadFromFile("data/illustrations/magicien.png");
+	sf::Sprite image(texture);
+
+	image.setScale(sf::Vector2f(0.5f, 0.5f));
+
+	fenetre->draw(image);
+}
+
 } /* namespace DonjonEtDragons */

@@ -193,7 +193,7 @@ int main() {
 	Joueur* listeJoueurs[5];
 	listeJoueurs[0] = new Joueur("Eliott", 60);
 	listeJoueurs[1] = new Guerrier("Vincent", 70, 90);
-	listeJoueurs[2] = new Guerrier("Youssef", 80, 80);
+	listeJoueurs[2] = new Magicien("Youssef", 80, 80);
 	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
 	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
 
