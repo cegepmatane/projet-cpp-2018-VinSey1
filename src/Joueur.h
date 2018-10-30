@@ -54,7 +54,7 @@ public:
 
 	void ajouterEquipement(Equipement * nouvelEquipement);
 
-	void afficher(RenderWindow*);
+	virtual void afficher(RenderWindow*);
 
 protected:
 	string nom;

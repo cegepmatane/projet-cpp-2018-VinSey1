@@ -188,18 +188,20 @@ int main() {
 		}
 	}*/
 
+	int numeroJoueur = 0;
+
 	Joueur* listeJoueurs[5];
-	listeJoueurs[0] = new Guerrier("Eliott", 60, 100);
+	listeJoueurs[0] = new Joueur("Eliott", 60);
 	listeJoueurs[1] = new Guerrier("Vincent", 70, 90);
 	listeJoueurs[2] = new Guerrier("Youssef", 80, 80);
 	listeJoueurs[3] = new Guerrier("Valentin", 90, 70);
 	listeJoueurs[4] = new Guerrier("Michael", 100, 60);
 
-	Joueur* joueur = listeJoueurs[0];
-
-	bool joueurActif = false;
+	Joueur* joueurActuel;
+	bool changerJoueur;
 
 	while (fenetre.isOpen()) {
+		changerJoueur = false;
 		fenetre.clear();
 
 		while (fenetre.pollEvent(evenement)) {
@@ -208,7 +210,7 @@ int main() {
 			if(evenement.type == Event::KeyPressed) {
 				switch(evenement.key.code) {
 					case Keyboard::B: {
-						if(!(joueurActif)) joueurActif = true;
+						changerJoueur = true;
 						break;
 					}
 					case Keyboard::Q: {
@@ -225,10 +227,17 @@ int main() {
 				}
 			}
 		}
+		if(changerJoueur){
+			if(numeroJoueur == 4) {
+				numeroJoueur = 0;
+			} else {
+				numeroJoueur += 1;
+			}
+		}
 
-		if(joueurActif) joueur->afficher(&fenetre);
+		joueurActuel = listeJoueurs[numeroJoueur];
+		joueurActuel->afficher(&fenetre);
 		fenetre.display();
-
 	}
 
 	cout << "Fin du jeu" << endl;

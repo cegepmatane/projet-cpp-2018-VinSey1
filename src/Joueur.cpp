@@ -49,6 +49,7 @@ bool Joueur::operator<(Joueur& autreJoueur){
 
 void Joueur::afficher(RenderWindow* fenetre){
 
+	cout << "Affichage de " << this->nom << endl;
 	sf::Texture texture;
 	texture.loadFromFile("data/joueur.png");
 	sf::Sprite image(texture);
