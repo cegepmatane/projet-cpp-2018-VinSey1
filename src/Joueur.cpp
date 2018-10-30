@@ -51,7 +51,7 @@ void Joueur::afficher(RenderWindow* fenetre){
 
 	cout << "Affichage de " << this->nom << endl;
 	sf::Texture texture;
-	texture.loadFromFile("data/joueur.png");
+	texture.loadFromFile("data/illustrations/joueur.png");
 	sf::Sprite image(texture);
 
 	image.setScale(sf::Vector2f(0.5f, 0.5f));

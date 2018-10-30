@@ -49,7 +49,7 @@ void Guerrier::afficher(RenderWindow* fenetre){
 
 	cout << "Affichage de " << this->nom << endl;
 	sf::Texture texture;
-	texture.loadFromFile("data/guerrier.png");
+	texture.loadFromFile("data/illustrations/guerrier.png");
 	sf::Sprite image(texture);
 
 	image.setScale(sf::Vector2f(0.5f, 0.5f));
