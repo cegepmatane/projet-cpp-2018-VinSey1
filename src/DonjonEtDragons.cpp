@@ -226,10 +226,18 @@ int main() {
 						joueurActuel->setProtection(!joueurActuel->getProtection());
 						break;
 					}
-					case Keyboard::E: {
-						joueurActuel->soigner();
-						break;
-					}
+            		case Keyboard::Left:
+            			joueurActuel->deplacer(-10, 0);
+               		break;
+            		case Keyboard::Right:
+            			joueurActuel->deplacer(10, 0);
+                   	break;
+            		case Keyboard::Up:
+            			joueurActuel->deplacer(0, -10);
+                   	break;
+            		case Keyboard::Down:
+            			joueurActuel->deplacer(0, 10);
+                  	break;
 					default: {}
 				}
 			}

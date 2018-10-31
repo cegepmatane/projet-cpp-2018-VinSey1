@@ -92,8 +92,12 @@ void Joueur::afficher(RenderWindow& fenetre){
 }
 
 void Joueur::proteger(RenderWindow& fenetre){
-	cout << "por" << endl;
 	fenetre.draw(*imageProtection);
+}
+
+void Joueur::deplacer(float deplacementX, float deplacementY){
+	this->imagePersonnage->move(deplacementX, deplacementY);
+	this->imageProtection->move(deplacementX, deplacementY);
 }
 
 } /* namespace DonjonEtDragons */

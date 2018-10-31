@@ -66,6 +66,8 @@ public:
 
 	void proteger(RenderWindow&);
 
+	void deplacer(float deplacementX, float deplacementY);
+
 protected:
 	string nom;
 	int armure;
