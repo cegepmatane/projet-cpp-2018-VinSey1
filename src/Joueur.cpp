@@ -13,31 +13,55 @@ namespace DonjonEtDragons {
 Joueur::Joueur() {
 	this->armure = 0;
 	this->nom = "Inconnu";
+/*
+	this->nomTest = new sf::Text();
+	this->nomTest->setString(this->nom);*/
 
-	this->texture = new sf::Texture();
-	this->texture->loadFromFile("data/illustrations/joueur.png");
-	this->image = new sf::Sprite(*texture);
-	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
+	this->texturePersonnage = new sf::Texture();
+	this->texturePersonnage->loadFromFile("data/illustrations/joueur.png");
+	this->imagePersonnage = new sf::Sprite(*texturePersonnage);
+	this->imagePersonnage->setScale(sf::Vector2f(0.5f, 0.5f));
+
+	this->textureProtection = new sf::Texture();
+	this->textureProtection->loadFromFile("data/illustrations/protection.png");
+	this->imageProtection = new sf::Sprite(*textureProtection);
+	this->imageProtection->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::Joueur(string nom) {
 	this->armure = 0;
 	this->nom = nom;
+/*
+	this->nomTest = new sf::Text();
+	this->nomTest->setString(this->nom);*/
 
-	this->texture = new sf::Texture();
-	this->texture->loadFromFile("data/illustrations/joueur.png");
-	this->image = new sf::Sprite(*texture);
-	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
+	this->texturePersonnage = new sf::Texture();
+	this->texturePersonnage->loadFromFile("data/illustrations/joueur.png");
+	this->imagePersonnage = new sf::Sprite(*texturePersonnage);
+	this->imagePersonnage->setScale(sf::Vector2f(0.5f, 0.5f));
+
+	this->textureProtection = new sf::Texture();
+	this->textureProtection->loadFromFile("data/illustrations/protection.png");
+	this->imageProtection = new sf::Sprite(*textureProtection);
+	this->imageProtection->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::Joueur(string nom, int armure) {
 	this->armure = armure;
 	this->nom = nom;
+/*
+	this->nomTest = new sf::Text();
+	this->nomTest->setString(this->nom);*/
 
-	this->texture = new sf::Texture();
-	this->texture->loadFromFile("data/illustrations/joueur.png");
-	this->image = new sf::Sprite(*texture);
-	this->image->setScale(sf::Vector2f(0.5f, 0.5f));
+	this->texturePersonnage = new sf::Texture();
+	this->texturePersonnage->loadFromFile("data/illustrations/joueur.png");
+	this->imagePersonnage = new sf::Sprite(*texturePersonnage);
+	this->imagePersonnage->setScale(sf::Vector2f(0.5f, 0.5f));
+
+	this->textureProtection = new sf::Texture();
+	this->textureProtection->loadFromFile("data/illustrations/protection.png");
+	this->imageProtection = new sf::Sprite(*textureProtection);
+	this->imageProtection->setScale(sf::Vector2f(0.5f, 0.5f));
 }
 
 Joueur::~Joueur() {}
@@ -63,11 +87,13 @@ bool Joueur::operator<(Joueur& autreJoueur){
 }
 
 void Joueur::afficher(RenderWindow& fenetre){
-	fenetre.draw(*image);
+	/*fenetre.draw(*nomTest);*/
+	fenetre.draw(*imagePersonnage);
 }
 
-void Joueur::blesser(){
-	image->setColor(sf::Color(255, 0, 0));
+void Joueur::proteger(RenderWindow& fenetre){
+	cout << "por" << endl;
+	fenetre.draw(*imageProtection);
 }
 
 } /* namespace DonjonEtDragons */

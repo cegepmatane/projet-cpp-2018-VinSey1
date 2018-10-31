@@ -208,7 +208,7 @@ int main() {
 				fenetre.close();
 			if(evenement.type == Event::KeyPressed) {
 				switch(evenement.key.code) {
-					case Keyboard::B: {
+					case Keyboard::Tab: {
 						changerJoueur = true;
 						break;
 					}
@@ -223,7 +223,11 @@ int main() {
 						break;
 					}
 					case Keyboard::A: {
-						joueurActuel->blesser();
+						joueurActuel->setProtection(!joueurActuel->getProtection());
+						break;
+					}
+					case Keyboard::E: {
+						joueurActuel->soigner();
 						break;
 					}
 					default: {}
@@ -241,6 +245,9 @@ int main() {
 		}
 
 		joueurActuel->afficher(fenetre);
+		if(joueurActuel->getProtection()){
+			joueurActuel->proteger(fenetre);
+		}
 		fenetre.display();
 
 	}

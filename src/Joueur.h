@@ -52,19 +52,31 @@ public:
 		this->arme = arme;
 	}
 
+	void setProtection(bool protection){
+		this->protection = protection;
+	}
+
+	bool getProtection(){
+		return protection;
+	}
+
 	void ajouterEquipement(Equipement * nouvelEquipement);
 
 	void afficher(RenderWindow&);
 
-	void blesser();
+	void proteger(RenderWindow&);
 
 protected:
 	string nom;
 	int armure;
 	Equipement * arme = NULL;
 	vector<Equipement *> equipements;
-	sf::Texture * texture;
-	sf::Sprite * image;
+	sf::Texture * texturePersonnage;
+	sf::Texture * textureProtection;
+	sf::Sprite * imagePersonnage;
+	sf::Sprite * imageProtection;
+	bool protection = false;
+	/*sf::Text * nomTest;*/
 };
 
 } /* namespace DonjonEtDragons */

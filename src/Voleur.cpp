@@ -12,25 +12,25 @@
 namespace DonjonEtDragons {
 
 Voleur::Voleur() : Joueur() {
-	this->texture->loadFromFile("data/illustrations/voleur.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = 0;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/voleur.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = 0;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom, int finesse) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/voleur.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = finesse;
 	this->arme = new Arme("Dague", 50);
 }
 
 Voleur::Voleur(string nom, int armure, int finesse) : Joueur(nom, armure) {
-	this->texture->loadFromFile("data/illustrations/voleur.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/voleur.png");
 	this->finesse = finesse;
 	this->arme = new Arme("Dague", 50);
 }

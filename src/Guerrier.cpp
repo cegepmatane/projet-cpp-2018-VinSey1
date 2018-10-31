@@ -12,25 +12,25 @@
 namespace DonjonEtDragons {
 
 Guerrier::Guerrier() : Joueur() {
-	this->texture->loadFromFile("data/illustrations/guerrier.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = 0;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/guerrier.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = 0;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int fureur) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/guerrier.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = fureur;
 	this->arme = new Arme("Epee", 100);
 }
 
 Guerrier::Guerrier(string nom, int armure, int fureur) : Joueur(nom, armure) {
-	this->texture->loadFromFile("data/illustrations/guerrier.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/guerrier.png");
 	this->fureur = fureur;
 	this->arme = new Arme("Epee", 100);
 }

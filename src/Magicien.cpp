@@ -12,25 +12,25 @@
 namespace DonjonEtDragons {
 
 Magicien::Magicien() : Joueur() {
-	this->texture->loadFromFile("data/illustrations/magicien.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/magicien.png");
 	this->magie = 0;
 	this->arme = new Arme("Baton", 75);
 }
 
 Magicien::Magicien(string nom) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/magicien.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/magicien.png");
 	this->magie = 0;
 	this->arme = new Arme("Baton", 75);
 }
 
 Magicien::Magicien(string nom, int magie) : Joueur(nom) {
-	this->texture->loadFromFile("data/illustrations/magicien.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/magicien.png");
 	this->magie = magie;
 	this->arme = new Arme("Baton", 75);
 }
 
 Magicien::Magicien(string nom, int armure, int magie) : Joueur(nom, armure) {
-	this->texture->loadFromFile("data/illustrations/magicien.png");
+	this->texturePersonnage->loadFromFile("data/illustrations/magicien.png");
 	this->magie = magie;
 	this->arme = new Arme("Baton", 75);
 }
