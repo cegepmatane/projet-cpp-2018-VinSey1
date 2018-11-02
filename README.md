@@ -25,3 +25,8 @@ Mes 3 événements sont donc :
 - Modification du nom d'un joueur,
 - Modification de l'armure d'un joueur,
 - Comparaison de deux joueurs choisis.
+
+Mes 3 événements avec les vues :
+- Changement de personnage à partir de la liste de personnages,
+- Déplacement des personnages indépendament les uns des autres,
+- Protection (avec l'ajout d'un petit bouclier) des personnages indépendamment les uns des autres.
